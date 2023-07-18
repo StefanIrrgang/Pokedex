@@ -3,25 +3,42 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pokedex</title>
     <script src="script.js"></script>
+    <script src="render.js"></script>
+    <script src="chartjs.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="fonts.css">
+    <link rel="stylesheet" href="list-style.css">
+    <link rel="stylesheet" href="header-style.css">
+    <link rel="stylesheet" href="media-style.css">
 
 
+    <title>Pok&eacute;dex</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    
 </head>
 
-<body onload="loadPokemon()">
-
-    <div id="pokedex">
-        <h1 id="pokemonName">Name</h1>
+<body onload="init()">
+    <div class="header">
+        <p class="title" onclick="init()">Pok&eacute;dex</p>
+        <img src="img/pokeball50.png" alt="">
+        <input class="search" form="text" placeholder="Search" id="search" onkeyup="search()">
     </div>
+    <div id="pokeList">
 
-    <div class="info-container">
-        <img id="pokemonImage" src="" alt="">
     </div>
+    <div class="loadbutton-container">
+        <button class="loadbutton" onclick="loadMorePokemon()">Load next 30 Pokemon's</button>
+    </div>
+    <div class="overlay d-none" id="overlay">
+        <div id="pokeCard">
 
+        </div>
+    </div>
 </body>
 
 </html>

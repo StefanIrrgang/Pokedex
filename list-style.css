@@ -1,0 +1,200 @@
+#pokeList {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.poke-card-list {
+    width: 250px;
+    height: 150px;
+    border-radius: 24px;
+    border: solid 1px black;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+.bottom {
+    height: 10px;
+    width: 100%;
+}
+
+.poke-card-list:hover {
+    transform: scale(1.15);
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.6));
+
+
+}
+
+.poke-card-list-id {
+    display: flex;
+    width: 95%;
+    justify-content: flex-end;
+}
+
+.poke-card-list-picture {
+    width: 100px;
+    height: 100px;
+    filter: drop-shadow(10px 10px 18px rgba(0, 0, 0, 0.8));
+}
+
+.poke-card-list-name {
+    margin-left: 10px;
+    font-weight: bold;
+    font-size: larger;
+}
+
+.poke-card-list-bottom-container {
+    display: flex;
+    justify-content: space-between;
+    height: 70%;
+    align-items: center;
+    padding-right: 12px;
+}
+
+.type-list {
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+    margin-top: 4px;
+    margin-left: 10px;
+    width: 56px;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.background-color-type-Grass {
+    background-color: green !important;
+}
+
+.background-color-type-Poison {
+    background-color: blueviolet !important;
+}
+
+.background-color-type-Fire {
+    background-color: red;
+}
+
+.background-color-type-Water {
+    background-color: blue;
+}
+
+.background-color-type-Bug {
+    background-color: chartreuse;
+}
+
+.background-color-type-Flying {
+    background-color: rgb(0, 204, 255);
+}
+
+.background-color-type-Normal {
+    background-color: grey;
+}
+
+.background-color-type-Electric {
+    background-color: yellow;
+}
+
+.background-color-type-Ground {
+    background-color: burlywood;
+}
+
+.background-color-type-Fighting {
+    background-color: rgba(165, 42, 42, 0.575);
+}
+
+.background-color-type-Psychic {
+    background-color: rgb(255, 0, 200);
+}
+
+.background-color-type-Ghost {
+    background-color: rgb(143, 94, 255);
+}
+
+.background-color-type-Rock {
+    background-color: rgb(71, 71, 71)
+}
+
+.background-color-type-Ice {
+    background-color: rgb(157, 209, 255);
+}
+
+.background-color-type-Dragon {
+    background-color: orange;
+}
+
+.background-color-type-Fairy {
+    background-color: pink
+}
+
+.background-color-Grass {
+    background-color: rgb(66, 255, 66);
+}
+
+.background-color-Poison {
+    background-color: rgb(191, 122, 255);
+}
+
+.background-color-Fire {
+    background-color: rgb(255, 86, 86);
+}
+
+.background-color-Water {
+    background-color: rgb(87, 87, 255);
+}
+
+.background-color-Bug {
+    background-color: rgb(181, 255, 107);
+}
+
+.background-color-Flying {
+    background-color: rgb(0, 204, 255);
+}
+
+.background-color-Normal {
+    background-color: rgb(202, 202, 202);
+}
+
+.background-color-Electric {
+    background-color: rgb(255, 255, 162);
+}
+
+.background-color-Ground {
+    background-color: rgb(253, 225, 188);
+}
+
+.background-color-Fighting {
+    background-color: rgba(201, 79, 79, 0.575);
+}
+
+.background-color-Psychic {
+    background-color: rgb(255, 108, 223);
+}
+
+.background-color-Ghost {
+    background-color: rgb(174, 140, 255);
+}
+
+.background-color-Rock {
+    background-color: rgb(139, 139, 139)
+}
+
+.background-color-Ice {
+    background-color: aliceblue;
+}
+
+.background-color-Dragon {
+    background-color: rgb(255, 214, 139);
+}
+
+.background-color-Fairy {
+    background-color: rgb(255, 221, 227)
+}
