@@ -6,23 +6,16 @@ let currentPokeIndex;
 let pokeIndex = 0;
 let loadStop = 30;
 
-function capitalizeFirstLetter(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-}
-
 function init() {
     pokeIndex = 0;
     loadStop = 30;
     loadListOfPokemon();
 }
 
-//////////////////////////////////////////////////////////////Get Poke List//////////////////////////////////////////////////////////////////
-
 async function loadListOfPokemon() {
     let pokeList = document.getElementById('pokeList');
     pokeList.innerHTML = '';
     pokeIndex = 0;
-
     for (let i = pokeIndex; i < 151; i++) {
         pokeIndex = i + 1;
         let url = `https://pokeapi.co/api/v2/pokemon/${pokeIndex}`;
@@ -44,8 +37,6 @@ function loadMorePokemon() {
     loadListOfPokemon();
 }
 
-///////////////////////////////////////////////////////////render Poke List//////////////////////////////////////////////////////////////////
-
 function renderListOfPokemonTypes(j) {
     let pokeType = document.getElementById(`poke-card-list-pokeType${thisPokemon['id']}`);
 
@@ -55,33 +46,23 @@ function renderListOfPokemonTypes(j) {
             <div class="type-list" id="typeList${i}${j}">${capitalizeFirstLetter(type)}</div>
         `;
         colorFinderTypeList(capitalizeFirstLetter(type), i, j);
-
     }
 }
 
-////////////////////////////////////////////////////load colors ////////////////////////////////////////////////////////////////////////////////////////////////
-
 function colorFinderList(i) {
     document.getElementById(`pokeCardList${i}`).classList.add(`background-color-${capitalizeFirstLetter(thisPokemon['types'][0]['type']['name'])}`);
-
 }
 
 function colorFinderTypeList(type, i, j) {
     document.getElementById(`typeList${i}${j}`).classList.add(`background-color-type-${type}`);
 }
 
-
-
-//////////////////////////////////////////////////////////////get List of clicked Pokemon//////////////////////////////////////////////////////////////////////////////
-
 function setCurrentPokeIndex(pokeId) {
     currentPokeIndex = pokeId;
     loadPokemon();
-
 }
 
 async function loadPokemon() {
-
     let url = `https://pokeapi.co/api/v2/pokemon/${currentPokeIndex}`;
     let urlSpecies = `https://pokeapi.co/api/v2/pokemon-species/${currentPokeIndex}/`;
     let urlEvolution = `https://pokeapi.co/api/v2/evolution-chain/${currentPokeIndex}/`;
@@ -91,13 +72,10 @@ async function loadPokemon() {
     currentPokemon = await response.json();
     species = await responseSpecies.json();
     evolution = await responseEvolution.json();
-
     renderPokeCard(currentPokeIndex);
     renderPokemonInfo();
     checkCurrentIndex();
 }
-
-/////////////////////////////////////////////////////////render Pokemon Card//////////////////////////////////////////////////////////////////////////////////////////////////
 
 function renderPokemonInfo() {
     document.getElementById('overlay').classList.remove('d-none');
@@ -119,18 +97,14 @@ function renderTypes() {
         `;
         colorFinderCardType(i, type);
     }
-
 }
 
 function colorFinderCardType(i, type) {
     document.getElementById(`pokeCardType${i}`).classList.add(`background-color-type-${type}`);
 }
 
-
-//////////////////////////////////////////////////////////////About////////////////////////////////////////////////////////////////////////
 function renderAbout() {
     let pokeInfos = document.getElementById('pokeInfo');
-
     pokeInfos.innerHTML = renderAboutHtml();
     for (let i = 0; i < currentPokemon['abilities'].length; i++) {
         let pokeInfo = currentPokemon['abilities'][i]['ability']['name'];
@@ -139,11 +113,8 @@ function renderAbout() {
     }
 }
 
-///////////////////////////////////////////////////Chart from BaseStats//////////////////////////////////////////////////////////////////
-
 function renderBaseStats() {
     let pokeInfos = document.getElementById('pokeInfo');
-
     pokeInfos.innerHTML = `
     <div class="chart">
         <canvas id="myChart"></canvas>
@@ -152,8 +123,6 @@ function renderBaseStats() {
     renderbarChart();
 }
 
-
-///////////////////////////////////////////////////////////////////Poke Evolution///////////////////////////////////////////////////////////////
 async function getEvolutionChain() {
     let evoChainId = species['evolution_chain']['url'];
     evoChainId = evoChainId.slice(42);
@@ -162,14 +131,11 @@ async function getEvolutionChain() {
     getEvolutionInfos(eveolutionChain);
 }
 
-
 async function getEvolutionInfos(eveolutionChain) {
-
     let pokename1 = eveolutionChain['chain']['species']['name'];
     let responseEveloutionPokemon1 = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokename1}`);
     let eveloutionPokemon1 = await responseEveloutionPokemon1.json();
     let evolutionImgSrc1 = eveloutionPokemon1['sprites']['other']['official-artwork']['front_default'];
-
     if (eveolutionChain['chain']['evolves_to'].length > 0) {
         if (eveolutionChain['chain']['evolves_to'][0]['evolves_to'].length > 0) {
             let pokename2 = eveolutionChain['chain']['evolves_to'][0]['species']['name'];
@@ -196,8 +162,6 @@ async function getEvolutionInfos(eveolutionChain) {
     }
 }
 
-/////////////////////////////////////////////////////////////////Poke Moves////////////////////////////////////////////////////////////
-
 function renderMoves() {
     let pokeMoves = document.getElementById('pokeInfo');
     pokeMoves.innerHTML = renderMovesHtmlContainer();
@@ -210,13 +174,9 @@ function renderMoves() {
     }
 }
 
-////////////////////////////////////////////////PokeCard Top Icons/////////////////////////////////////////////////////
-
 function closePokeCard() {
     document.getElementById('overlay').classList.add('d-none');
 }
-
-
 
 function checkCurrentIndex() { //runs in loadPokemon() function
     if (currentPokeIndex === 151) {
@@ -249,8 +209,6 @@ function dislikePokemon(pokeId) {
     document.getElementById(`heartfull${pokeId}`).classList.add('d-none');
 }
 
-
-//////////////////////////////////////////////////////search//////////////////////////////////////////////////////////////////////////////////////
 async function search() {
     let search = document.getElementById('search').value;
     search = search.toLowerCase();
@@ -275,4 +233,8 @@ async function search() {
             }
         }
     }
+}
+
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
 }

@@ -2,7 +2,7 @@ function renderListOfPokemon(pokeImg, i) {
     return `
     <div class="poke-card-list" id="pokeCardList${i}" onclick="setCurrentPokeIndex(${thisPokemon['id']})">
         <div class="poke-card-list-id">#${thisPokemon['id']}</div>
-        <div class="poke-card-list-name">${thisPokemon['name']}</div>
+        <div class="poke-card-list-name">${capitalizeFirstLetter(thisPokemon['name'])}</div>
         <div class="poke-card-list-bottom-container">
             <div class="poke-card-list-types" id="poke-card-list-pokeType${thisPokemon['id']}"></div>
             <img class="poke-card-list-picture" src="${pokeImg}">
@@ -14,7 +14,6 @@ function renderListOfPokemon(pokeImg, i) {
 function renderBottomMargin() {
     return `
     <div class="bottom">
-
     </div>
     `;
 }
@@ -35,7 +34,6 @@ function renderPokeCard() {
     </div>
     <div id="info-container" class="info-container">
         <div id="pokeimg">
-
     </div>
     <div class="navbar">
         <a onclick="renderAbout()" class="navbar-link" href="#">About</a>
@@ -44,7 +42,6 @@ function renderPokeCard() {
         <a onclick="renderMoves()" class="navbar-link" href="#">Moves</a>
     </div>
     <div id="pokeInfo">
-
     </div>
 </div>
     `
@@ -76,7 +73,7 @@ function renderEvolution2(img1, img2, lvl1, eveolutionChain) {
         </div>
         <div class="evolution-details">
             <span class="evolution-details-span">min Lvl ${lvl1}</span>
-            <img src="icon/arrow-evolution.png">
+            <img src="img/levelup30.png">
         </div>
         <div class="evolution-info">
             <div>
@@ -100,7 +97,7 @@ function renderEvolution3(img1, img2, img3, lvl1, lvl2, eveolutionChain) {
         </div>
         <div class="evolution-details">
             <span class="evolution-details-span">min Lvl ${lvl1}</span>
-            <img src="icon/arrow-evolution.png">
+            <img src="img/levelup30.png">
         </div>
         <div class="evolution-info">
             <div>
@@ -110,7 +107,7 @@ function renderEvolution3(img1, img2, img3, lvl1, lvl2, eveolutionChain) {
         </div>
         <div class="evolution-details">
             <span class="evolution-details-span">min Lvl ${lvl2}</span>
-            <img src="icon/arrow-evolution.png">
+            <img src="img/levelup30.png">
         </div>
         <div class="evolution-info">
             <div>

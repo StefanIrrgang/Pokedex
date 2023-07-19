@@ -37,7 +37,7 @@ body {
 
 #pokedex {
     min-height: 42vh;
-    background-color: #FB6C6C;
+    background-color: #9c9191;
     color: white;
     display: flex;
     padding-right: 24px;
@@ -105,7 +105,7 @@ body {
 .card-icons {
     display: flex;
     justify-content: space-between;
-    background-color: #FB6C6C;
+    background-color: #9c9191;
     height: 64px;
     align-items: center;
     border-top-left-radius: 40px;
@@ -131,15 +131,17 @@ body {
 .navbar {
     display: flex;
     justify-content: space-around;
+    background-color: #9c9191 !important;
 }
 
 .navbar a {
-    color: grey;
+    color: white !important;
+    background-color: #9c9191;
     text-decoration: none;
 }
 
 .navbar a:hover {
-    color: black;
+    color: black !important;
     text-decoration: underline;
 }
 
