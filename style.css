@@ -57,6 +57,7 @@ body {
     overflow-y: scroll;
     border-bottom-left-radius: 40px;
     border-bottom-right-radius: 40px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 #pokeInfo::-webkit-scrollbar {
@@ -138,6 +139,7 @@ body {
     color: white !important;
     background-color: #9c9191;
     text-decoration: none;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .navbar a:hover {

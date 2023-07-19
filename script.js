@@ -5,6 +5,8 @@ let thisPokemon;
 let currentPokeIndex;
 let pokeIndex = 0;
 let loadStop = 30;
+let currentCount;
+let lastPokemon = 1010;
 
 function init() {
     pokeIndex = 0;
@@ -30,11 +32,25 @@ async function loadListOfPokemon() {
         }
     }
     pokeList.innerHTML += renderBottomMargin();
+    currentCount = 30;
 }
 
-function loadMorePokemon() {
-    loadStop = loadStop + 30;
-    loadListOfPokemon();
+async function loadMorePokemon() {
+    for (let i = currentCount + 1; i < currentCount + 30; i++) {
+        pokeIndex = i + 1;
+        let url = `https://pokeapi.co/api/v2/pokemon/${pokeIndex}`;
+        let response = await fetch(url);
+        thisPokemon = await response.json();
+        let pokeImg = thisPokemon['sprites']['other']['official-artwork']['front_default'];
+        pokeList.innerHTML += renderListOfPokemon(pokeImg, i);
+        renderListOfPokemonTypes(i);
+        colorFinderList(i);
+        if (pokeIndex === currentCount + 30 || pokeIndex === lastPokemon) {
+            break;
+        }
+    }
+    pokeList.innerHTML += renderBottomMargin();
+    currentCount = currentCount + 30;
 }
 
 function renderListOfPokemonTypes(j) {
