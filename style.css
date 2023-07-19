@@ -127,6 +127,7 @@ body {
     margin-top: 4px;
     width: fit-content;
     border-radius: 24px;
+    color: black;
 }
 
 .navbar {
@@ -232,21 +233,21 @@ th {
     left: 50%;
     bottom: 10px;
     margin-left: -60px;
-    width: 128px;
+    width: 152px;
     height: 64px;
-    border-radius: 16px;
-    background-color: black;
+    border-radius: 4px;
+    background-color: black !important;
     border: 1px solid white;
-    color: white;
+    color: white !important;
     cursor: pointer;
     font-weight: bolder;
     transition: all ease-in-out 0.4s;
 }
 
 .loadbutton:hover {
-    background-color: darkgray;
+    background-color: darkgray !important;
     color: black;
-    border: 1px solid black;
+    border: 1px solid black !important;
     transform: scale(1.20);
 }
 

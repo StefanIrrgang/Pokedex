@@ -31,7 +31,6 @@ async function loadListOfPokemon() {
             break;
         }
     }
-    pokeList.innerHTML += renderBottomMargin();
     currentCount = 30;
 }
 
@@ -49,7 +48,6 @@ async function loadMorePokemon() {
             break;
         }
     }
-    pokeList.innerHTML += renderBottomMargin();
     currentCount = currentCount + 30;
 }
 
