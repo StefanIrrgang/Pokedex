@@ -72,7 +72,7 @@ function renderEvolution2(img1, img2, lvl1, eveolutionChain) {
             <span>${capitalizeFirstLetter(eveolutionChain['chain']['species']['name'])}</span>
         </div>
         <div class="evolution-details">
-            <span class="evolution-details-span">min Lvl ${lvl1}</span>
+            <span class="evolution-details-span">min Lvl ${evoSpecialCheck1(lvl1)}</span>
             <img src="img/levelup30.png">
         </div>
         <div class="evolution-info">
@@ -96,7 +96,7 @@ function renderEvolution3(img1, img2, img3, lvl1, lvl2, eveolutionChain) {
             <span>${capitalizeFirstLetter(eveolutionChain['chain']['species']['name'])}</span>
         </div>
         <div class="evolution-details">
-            <span class="evolution-details-span">min Lvl ${lvl1}</span>
+            <span class="evolution-details-span">min Lvl ${evoSpecialCheck1(lvl1)}</span>
             <img src="img/levelup30.png">
         </div>
         <div class="evolution-info">
@@ -106,7 +106,7 @@ function renderEvolution3(img1, img2, img3, lvl1, lvl2, eveolutionChain) {
             <span>${capitalizeFirstLetter(eveolutionChain['chain']['evolves_to'][0]['species']['name'])}</span>
         </div>
         <div class="evolution-details">
-            <span class="evolution-details-span">min Lvl ${lvl2}</span>
+            <span class="evolution-details-span">min Lvl ${evoSpecialCheck2(lvl2)}</span>
             <img src="img/levelup30.png">
         </div>
         <div class="evolution-info">
@@ -154,4 +154,20 @@ function renderAboutHtml() {
     </table>
     <div>
     `;
+}
+
+function evoSpecialCheck1(lvl1) {
+    if (lvl1 >=1 & lvl1 <=99) {
+        return `${lvl1}`;
+    } else {
+        return `Evolution Stone`;
+    };
+}
+
+function evoSpecialCheck2(lvl2) {
+    if (lvl2 >=1 & lvl2 <=99) {
+        return `${lvl2}`;
+    } else {
+        return `Evolution Stone`;
+    };
 }

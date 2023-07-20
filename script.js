@@ -18,7 +18,7 @@ async function loadListOfPokemon() {
     let pokeList = document.getElementById('pokeList');
     pokeList.innerHTML = '';
     pokeIndex = 0;
-    for (let i = pokeIndex; i < 151; i++) {
+    for (let i = pokeIndex; i <= lastPokemon; i++) {
         pokeIndex = i + 1;
         let url = `https://pokeapi.co/api/v2/pokemon/${pokeIndex}`;
         let response = await fetch(url);
@@ -35,7 +35,9 @@ async function loadListOfPokemon() {
 }
 
 async function loadMorePokemon() {
-    for (let i = currentCount + 1; i < currentCount + 30; i++) {
+    let loadButton = document.getElementById('Load-Button');
+    loadButton.disabled = true;
+    for (let i = currentCount; i < currentCount + 30; i++) {
         pokeIndex = i + 1;
         let url = `https://pokeapi.co/api/v2/pokemon/${pokeIndex}`;
         let response = await fetch(url);
@@ -49,6 +51,7 @@ async function loadMorePokemon() {
         }
     }
     currentCount = currentCount + 30;
+    loadButton.disabled = false;
 }
 
 function renderListOfPokemonTypes(j) {
