@@ -8,6 +8,10 @@ let loadStop = 30;
 let currentCount;
 let lastPokemon = 1010;
 
+/**
+ * JS Test Kommi
+ */
+
 function init() {
     pokeIndex = 0;
     loadStop = 30;
